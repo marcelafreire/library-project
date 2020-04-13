@@ -1,0 +1,31 @@
+  
+<span><a href="/books">Back</a></span><br>
+
+{{#with book}}
+<h1>{{title}}</h1>
+<h4>Author: {{author.[0].name}} {{auhtor.[0].lastname}} - rating: {{rating}}</h4>
+<p>{{description}}</p>
+{{#if path}}
+<img src="{{path}}" alt"{{title}}">
+{{/if}}
+<span><a href="/book-edit/{{_id}}">EDIT</a></span><br>
+{{/with}}
+
+<p>Add a review</p>
+<form action="/reviews/add?book_id={{book._id}}" method="post">
+  <label for="">User:</label>
+  <input type="text" name="user">
+
+  <label for="">Comments:</label>
+  <textarea type="text" name="comments"></textarea>
+
+  <button type="submit">ADD</button>
+
+
+<h2>Reviews</h2>
+{{#each book.reviews}}
+<div class="review-item">
+  <p>{{this.comments}}</p>
+  <span>{{this.user}}</span>
+</div>
+{{/each}}

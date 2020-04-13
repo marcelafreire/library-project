@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <style>
+       #map {
+        height: 100vh;
+       }
+
+       html,
+       body {
+           height: 100%;
+
+       }
+    </style>
+</head>
+<body>
+ 
+  <div id="container">
+     {{#unless user}}
+  <a href="/signup">Sign up |</a>
+  <a href="/login">Login | </a>
+  {{/unless}}
+  <a href="/logout">Logout |</a>
+  <a href="/book-add">Add book |</a>
+</div>
+
+  {{{body}}}
+
+ 
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNHG0WS4JH9vzl1MnfeKU07GekcQ9SePk"></script>
+  <script src="/javascripts/script.js"></script>
+</body>
+</html>
